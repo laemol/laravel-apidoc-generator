@@ -44,8 +44,8 @@ class UpdateDocumentation extends Command
 
         $documentarian = new Documentarian();
 
-        if (! is_dir($outputPath)) {
-            $this->error('There is no generated documentation available at '.$outputPath.'.');
+        if (!is_dir($outputPath)) {
+            $this->error('There is no generated documentation available at ' . $outputPath . '.');
 
             return false;
         }
@@ -53,6 +53,6 @@ class UpdateDocumentation extends Command
 
         $documentarian->generate($outputPath);
 
-        $this->info('Wrote HTML documentation to: '.$outputPath.'/public/index.html');
+        $this->info('Wrote HTML documentation to: ' . $outputPath . '/index.html');
     }
 }

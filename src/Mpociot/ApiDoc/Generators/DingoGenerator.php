@@ -31,7 +31,7 @@ class DingoGenerator extends AbstractGenerator
             $docblockResponse = $this->getDocblockResponse($routeDescription['tags']);
             if ($docblockResponse) {
                 // we have a response from the docblock ( @response )
-                $response = json_decode(json_decode($docblockResponse->getContent()));
+                $response = json_decode($docblockResponse->getContent());
                 $showresponse = true;
             }
             if (!$response) {
@@ -177,6 +177,7 @@ class DingoGenerator extends AbstractGenerator
                             $newDemoData = $type::first();
                             if ($newDemoData) {
                                 $demoData = $newDemoData;
+                                \Log::debug($demoData);
                             }
                         } catch (\Exception $e) {
                             // do nothing
